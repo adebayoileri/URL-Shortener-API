@@ -1,4 +1,4 @@
 {
     "mongoURI":"mongodb+srv://adebayoileri:ay2mLMqkNZgbwGP@trackman-kt05w.mongodb.net/test?retryWrites=true&w=majority",
-    "baseUrl":"http://localhost:5000"
+    "baseUrl":"https://urlcuttr.herokuapp.com"
 }
