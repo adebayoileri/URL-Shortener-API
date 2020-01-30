@@ -5,6 +5,7 @@ const app = express();
 
 //Connect to database
 connectDB();
+app.use(express.static('public'));
 
 app.use(express.json({ extended: false }));
 
