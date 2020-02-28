@@ -3,6 +3,8 @@ const connectDB = require('./config/db');
 
 const app = express();
 
+process.env.NODE_ENV = “production”;
+
 //Connect to database
 connectDB();
 app.use(express.static('public'));
