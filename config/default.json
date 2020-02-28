@@ -1,4 +1,4 @@
 {
-    "DB_URL":"mongodb+srv://adebayoileri:ademongodb@trackman-kt05w.mongodb.net/test?retryWrites=true&w=majority",
-    "baseUrl":"https://urlcuttr.herokuapp.com"
+    "DB_URL": process.env.DB_URL,
+    "baseUrl":process.env.baseUrl
 }
