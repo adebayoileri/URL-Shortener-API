@@ -13,14 +13,14 @@ router.post('/shorten', async (req, res)=>{
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isUri(baseUrl)){
-        return res.status(401).json('Invalid Base Url')
+       return res.status(401).json('Invalid Base Url')
     }
 
     //Create url code
     const urlCode = shortid.generate();
     if(validUrl.isUri(longUrl)){
         try {
-            let url = await Url.findOne({ longUrl });
+            let url = await Url.findOne({longUrl});
 
             if(url){
                 res.status(200).json(url)
@@ -42,7 +42,7 @@ router.post('/shorten', async (req, res)=>{
             res.status(500).json('Server error')
         }
     } else {
-        res.status(401).json('Invali Long Url');
+        res.status(401).json('Invalid Long Url');
     }
 
 })

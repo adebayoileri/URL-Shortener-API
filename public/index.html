@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>UrlCuttr App</h1>
-    <form id="urlForm" action="" method="post">
-        <input type="text" placeholder="Enter a long url here" name="longUrl" id="longUrl">
+    <form id="urlForm" action="/api/url/shorten" method="POST">
+        <input id="longUrl" type="text" placeholder="Enter a long url here" >
         <input type="submit" value="Cut that url">
     </form>
     <div id="shortUrl">
@@ -17,4 +17,5 @@
     </div>
 </body>
 <script src="./js/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </html>
