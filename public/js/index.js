@@ -13,7 +13,7 @@ urlForm.addEventListener('click',async() =>{
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        shortUrldiv.innerHTML +=`<a href="${data.shortUrl}">${data.shortUrl}</a>`})
+        // console.log(data)
+        shortUrldiv.innerHTML +=` here is your shorten link<a href="${data.shortUrl}">${data.shortUrl}</a> <br>`})
     .catch(err => console.log(err));
 });
