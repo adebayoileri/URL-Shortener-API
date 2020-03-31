@@ -3,7 +3,7 @@ urlForm.addEventListener('click',async() =>{
     var shortUrldiv = document.querySelector('#shortUrl');
     // console.log(longUrl);
 
-   await fetch('http://urlcuttr.herokuapp.com/api/url/shorten',{
+   await fetch('https://urlcuttr.herokuapp.com/api/url/shorten',{
         method : "POST",
         headers: {
             "Content-Type":"application/json",
