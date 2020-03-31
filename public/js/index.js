@@ -1,24 +1,19 @@
-// import { response } from "express";
+urlForm.addEventListener('click',async() =>{
+    const longUrl = document.getElementById('longurl').value;
+    var shortUrldiv = document.querySelector('#shortUrl');
+    // console.log(longUrl);
 
-const urlForm = document.getElementById('urlForm');
-const longUrl = document.getElementById('longUrl').value;
-console(longUrl)
-const shortUrldiv = document.getElementById('shortUrl');
-
-urlForm.addEventListener('submit',async (e) =>{
-    e.preventDefault();
-   await fetch('http://localhost:5000/api/url/shorten',{
+   await fetch('http://urlcuttr.herokuapp.com/api/url/shorten',{
         method : "POST",
         headers: {
-            "Content-Type":"application/json"
+            "Content-Type":"application/json",
+            "Accept":"application/json"
         },
-        body: JSON.stringify(longUrl)
-    }).then(response => console.log(response.json()))
-    .then(data => console.log(data))
-    .catch(err => console.error(err));
-    // await axios.post('http://localhost:5000/api/url/shorten',
-    // {
-    //     body: JSON.stringify({longUrl})
-    // }).then(response => console.log(response.json()))
-    // .catch(err => console.error(err));
+        body: JSON.stringify({longUrl:longUrl})
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        shortUrldiv.innerHTML +=`<a href="${data.shortUrl}">${data.shortUrl}</a>`})
+    .catch(err => console.log(err));
 });
