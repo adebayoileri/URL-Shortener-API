@@ -10,7 +10,7 @@ const Url = require('../models/url.js')
 //@desc  Create short url
 
 router.post('/shorten', async (req, res)=>{
-    const { longUrl } = req.body;
+    const { longUrl, urlText } = req.body;
     const baseUrl = config.get('baseUrl');
 
     if(!validUrl.isUri(baseUrl)){
@@ -18,7 +18,9 @@ router.post('/shorten', async (req, res)=>{
     }
 
     //Create url code
-    const urlCode = shortid.generate();
+    const urlGenerate = shortid.generate();
+    const urlCode = urlText ? urlText : urlGenerate;
+
     if(validUrl.isUri(longUrl)){
         try {
             let url = await Url.findOne({longUrl});
@@ -26,7 +28,7 @@ router.post('/shorten', async (req, res)=>{
             if(url){
                 res.status(200).json(url)
             }else{
-                const shortUrl = baseUrl + '/' + urlCode;
+              const shortUrl = baseUrl + '/' + urlCode;
                 url = new Url({
                     longUrl,
                     shortUrl,
@@ -38,7 +40,8 @@ router.post('/shorten', async (req, res)=>{
 
               return res.status(201).json(url);
             }
-        } catch (err) {
+            }
+        catch (err) {
             console.error(err);
             res.status(500).json('Server error')
         }
