@@ -1,6 +1,6 @@
-function copyText() {
+function copyText(link) {
     /* Get the text field */
-    var copyText = document.getElementById("shortlink");
+    var copyText = document.getElementById(link);
   
     /* Select the text field */
     copyText.select();
@@ -33,10 +33,10 @@ urlForm.addEventListener('click',async() =>{
         // console.log(data)
         shortUrldiv.innerHTML +=` <div class="link">
         <span>Long URL</span>
-        <p>${data.shortUrl}</p>
+        <p>${data.longUrl}</p>
         <span>Shorten Link</span>
-        <input type="text" value=${data.shortUrl} id="shortlink" disabled="true"/>
-        <button id="copyBtn" onclick="copyText()" class="btn-click">Copy</button>
+        <input type="text" value=${data.shortUrl} id=${data.urlCode} disabled="true"/>
+        <button id="copyBtn" onclick=${copyText(data.urlCode)} class="btn-click">Copy</button>
        </div>`})
     .catch(err => console.log(err));
 });
