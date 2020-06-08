@@ -4,6 +4,7 @@ const urlSchema = new mongoose.Schema({
     urlCode: String,
     longUrl: String,
     shortUrl: String,
+    clickCount: {type: String, default: 0},
     // urlText: String,
     date: { type: String, default: Date.now}
 });

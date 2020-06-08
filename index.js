@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 
@@ -10,8 +11,15 @@ const app = express();
 //Connect to database
 connectDB();
 // Render frontend
+app.use(cors());
 const frontend = path.join(__dirname, './public');
 app.use(express.static(frontend));
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
+  
 
 app.use(express.json({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));

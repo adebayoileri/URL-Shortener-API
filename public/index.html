@@ -5,16 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UrlCuttr</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>UrlCuttr App</h1>
-    <!-- <form action="/api/url/shorten" id="urlForm" method="POST"> -->
-        <input type="text" name="" id="longurl">
-        <!-- <input type="te" placeholder="Enter a long url here" id="longurl" required/> -->
-        <button type="submit" id="urlForm"> Cut that url</button>
-    <div id="shortUrl">
 
+    <header>
+        <div class="logo">UrlCuttr</div>
+        <nav>
+            <ul>
+                <li><a href="#start">GET STARTED</a></li>
+                <!-- <li><a href="#">Sign Up</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="content-head">
+      <div class="head-text">
+          <h1>
+            More than just shorten links
+          </h1>
+          <p>
+            Build your brand’s recognition and get detailed insights 
+            on how your links are performing.      
+          </p>
+         
+      </div>
+      <div class="head-image">
+          <img src="./images/illustration-working.svg" alt="lady-computersvg" srcset="">
+      </div>
     </div>
+    <div id="start" class="link-box">
+      <input type="text" id="longurl" placeholder="Type or paste link here">
+      <button class="btn-click" id="urlForm" type="submit">Cut that url</button>
+    </div>
+    
+    <div id="link-list" class="links">
+      <!-- <div class="link">
+        <p>Long url: https:github.com/adebayoileri</p>
+        <p>shortn link: urlcuttr.herokuapp.com/34uf83</p>
+        <button class="btn-click">Copy</button>
+       </div> -->
+      <div class="link">
+        <span>Long URL</span>
+        <p>https:github.com/adebayoileri</p>
+        <span>Shorten Link</span>
+        <input type="text" value="urlcuttr.herokuapp.com/jgThdu7" id="shortlink" aria-disabled="true"/>
+        <button id="copyBtn" onclick="copyText()" class="btn-click">Copy</button>
+       </div>
+    </div>
+    
+
+    <!-- <h1>UrlCuttr App</h1> -->
+    <!-- <form action="/api/url/shorten" id="urlForm" method="POST"> -->
+        <!-- <input type="text" name="" id="longurl"> -->
+        <!-- <input type="te" placeholder="Enter a long url here" id="longurl" required/> -->
+        <!-- <button type="submit" id="urlForm"> Cut that url</button>
+    <div id="shortUrl"> -->
+
+    <!-- </div> -->
 </body>
 <script src="./js/index.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
