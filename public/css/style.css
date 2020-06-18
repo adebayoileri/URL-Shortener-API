@@ -90,6 +90,20 @@ header nav ul li a:last-child {
     /* border-left: 3px solid rgb(243, 37, 37); */
     background: hsl(257, 27%, 26%);
   }
+  .message{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      width: 75%;
+      padding: 18px;
+      border-radius: 12px;
+      background:red;
+      color: white;
+  }
+  .none{
+      display: none;
+  }
   .link-box input{
     display: flex;
     flex-direction: column;
